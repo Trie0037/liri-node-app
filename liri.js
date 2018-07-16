@@ -48,6 +48,7 @@ function movies(title) {
         if (!error && response.statusCode === 200) {
             console.log("Title: " + JSON.parse(body).Title);
             console.log("Year: " + JSON.parse(body).Year);
+            console.log("Rotten Tomatoes:"  + JSON.parse(body).Ratings[0].Value);
             console.log("IMDB Rating: " + JSON.parse(body).imdbRating);
             console.log("Country: " + JSON.parse(body).Country);
             console.log("Language: " + JSON.parse(body).Language);
