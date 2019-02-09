@@ -2,17 +2,8 @@ require("dotenv").config();
 var OMDBrequest = require("request");
 var Spotify = require("node-spotify-api");
 var Twitter = require("twitter");
-// var client = new Twitter(keys.twitter);
-/** `my-tweets`
 
-* `spotify-this-song`
-  
-* `movie-this`
-  
-* `do-what-it-says`*/
-// Include the following packages
 var client = require("./keys");
-var request = require("request");
 var fs = require("fs");
 
 var command = process.argv[2];
@@ -23,14 +14,24 @@ run(command, args);
 function run(cmd, arg) {
     switch (cmd) {
         case "my-tweets":
-            tweets();
+            if(!arg) {
+                var defaultTweets ="ESPN";
+                tweets(defaultTweets);
+                return;
+            }
+            tweets(arg);
             break;
         case "spotify-this-song":
+            if(!arg) {
+                var defaultSong = "California Love";
+                spotify(defaultSong);
+                return;
+            }
             spotify(arg);
             break;
         case "movie-this":
             if (!arg) {
-                var defaultMovie = "Mr Nobody";
+                var defaultMovie = "Dream A Little Dream";
                 movies(defaultMovie);
                 return;
             }
@@ -80,7 +81,7 @@ function spotify(title) {
 function tweets() {
 
     var twitter = new Twitter(client.twitter);
-    twitter.get('statuses/home_timeline', function (error, tweets, response) {
+    twitter.get('statuses/home_timeline', function (error, tweets) {
         if (!error) {
             tweets.forEach(tweet => {
 
@@ -104,11 +105,15 @@ function doIt() {
         var file = data.split(",");
         console.log(file[0], file[1]);
         run(file[0], file[1]);
-        // var lines = data.split("\n");
-        // var randomLine = lines[Math.floor(Math.random() * lines.length)];
-
-        // console.log("node " + "liri.js " + randomLine)
-
     });
-
 }
+
+/*function doItt() {
+    fs.appendFile('log.txt', 'new data', function (err) {
+        if (err) {
+      // append failed
+        } else {
+      // done
+        }
+    });
+}*/

@@ -1,0 +1,29 @@
+{
+  "name": "liri",
+  "version": "1.0.0",
+  "description": "Displays last 20 Twitter tweets.\r Displays Spotify Artist/Album.\r Displays Movie Info from OMDB.",
+  "main": "liri.js",
+  "dependencies": {
+    "dotenv": "^6.2.0",
+    "i": "^0.3.6",
+    "node-spotify-api": "^1.0.7",
+    "npm": "^6.2.0",
+    "request": "^2.88.0",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trie0037/liri-node-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Trie0037/liri-node-app/issues"
+  },
+  "homepage": "https://github.com/Trie0037/liri-node-app#readme"
+}
