@@ -1,0 +1,13 @@
+var movie = require("./movie");
+var movie = new Movie();
+var movieArgs = process.argv;
+var movieTitle = '';
+for (i=2 )
+
+name genre rating summary network
+
+
+var tv = [];
+console.log(tv.slice(2));
+console.log(tv.slice(2,4));
+console.log(tv.slice(1,5));
